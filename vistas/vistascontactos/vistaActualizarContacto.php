@@ -86,7 +86,7 @@ if (isset($_SESSION['erroresValidacion'])) {
 <!--SELECT -->
 <label>ROL DEL CONTACTO</label>
 <br>
-            <select id="rolcontacto_Idrolcontacto" name="rolcontacto_Idrolcontacto">  
+            <select id="rolcontacto_Idrolcontacto" name="rolcontacto_Idrolcontacto" class="controls">  
                 <?php
                 for ($j = 0; $j < $cantRoles; $j++) {
                     ?>                        

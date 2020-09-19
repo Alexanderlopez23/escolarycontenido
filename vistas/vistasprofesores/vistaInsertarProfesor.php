@@ -98,7 +98,7 @@ if (isset($_SESSION['registroMateriaProfesores'])) {
 
         <!--SELECT -->        
         <h6>MATERIA DEL PROFESOR</h6>
-        <select id="materias_IdMateria" name="materias_IdMateria">               
+        <select id="materias_IdMateria" name="materias_IdMateria" class="controls" >               
             <?php
             for ($j = 0; $j < $cantMaterias; $j++) {
                 ?>

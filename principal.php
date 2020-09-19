@@ -31,7 +31,8 @@ if (isset($_SESSION['mensaje'])) {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
         <link rel="stylesheet" type="text/css" href="vistas/vistasVoceros/cssvistainsertarvocero/estilo.css">
-     </head>
+        <link rel="shortcut icon" href="imagenes/Favicon.ico">     
+    </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="Controlador.php?ruta=mostrarinicio">INTRANET EYC</a>

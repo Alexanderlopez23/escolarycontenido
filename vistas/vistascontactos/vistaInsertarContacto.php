@@ -83,7 +83,7 @@ if (isset($erroresValidacion['mensajesError']['ConCorreo']))
         
         <!--SELECT -->        
         <h6>ROL DEL CONTACTO</h6>
-        <select id="rolcontacto_Idrolcontacto" name="rolcontacto_Idrolcontacto">               
+        <select id="rolcontacto_Idrolcontacto" name="rolcontacto_Idrolcontacto" class="controls">               
             <?php
             for ($j = 0; $j < $cantRoles; $j++) {
                 ?>

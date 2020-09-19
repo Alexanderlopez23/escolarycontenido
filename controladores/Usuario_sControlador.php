@@ -87,7 +87,7 @@ class Usuario_sControlador {
                     $sesionPermitida = new ClaseSesion(); // se abre la sesión
                     $sesionPermitida->crearSesion(array($existeUsuario_s['registroEncontrado'][0], "", $rolesEnSesion)); //Se envìa a la sesiòn los datos del usuario logeado
 
-                    header("location:principal.php?contenido=vistas/vistasVoceros/home.php");
+                    header("location:principal.php?contenido=home.php");
                 } else {
                     session_start(); //se abre sesión para almacenar en ella el mensaje de inserción
                     $_SESSION['mensaje'] = "Credenciales de acceso incorrectas"; //mensaje de inserción

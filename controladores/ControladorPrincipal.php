@@ -75,7 +75,7 @@ class ControladorPrincipal {
                 break;
 
             case "mostrarinicio":
-                header("location:principal.php?contenido=vistas/vistasVoceros/home.php");
+                header("location:principal.php?contenido=home.php");
 
                 break;
 //esto se hace para listar voceros

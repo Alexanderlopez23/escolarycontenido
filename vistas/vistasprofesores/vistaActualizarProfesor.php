@@ -26,31 +26,20 @@ if (isset($_SESSION['erroresValidacion'])) {
 
 
 
-<div style="background:white">
-    <!--Estilo para h3-->
-    <style type="text/css">
-        h3 {
-            color: white;	
-        }	
-    </style>	
-    
-    <div class="container">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <h3 style="color:white">ACTUALIZAR  REGISTRO DEL  PROFESOR   </h3>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div>
-        <form role="form" style="background-color:green; width:80%; height: 15cm; margin: auto"  
-              method="POST" action="Controlador.php" id="formRegistro">
+      
 
-            <label style="color:white">NÚMERO DE DOCUMENTO DEL PROFESOR:</label>
-            <input type="number" name="IdProfesor" class="form-control" placeholder="DOCUMENTO"
-                   id="" readonly=""
-            value="<?php
+                          
+
+
+<!-- INTEGRANDO FORMULARIO -->
+
+<form method="POST" action="Controlador.php" id="formRegistro"
+<section class="form-register">
+    <h4> ACTUALIZAR REGISTRO </h4>
+<!-- NUMERO DE DOCUMENTO PROFESOR -->
+<label>NUMERO DE DOCUMENTO</label>
+<input class="controls" type="number" name="IdProfesor" id="IdProfesor" placeholder="Ingrese Numero Documento" readonly=""
+    value="<?php
             if (isset($actualizarDatosProfesor->IdProfesor))
             echo $actualizarDatosProfesor->IdProfesor;
             if (isset($erroresValidacion['datosViejos']['IdProfesor']))
@@ -58,34 +47,13 @@ if (isset($_SESSION['erroresValidacion'])) {
             if (isset($_SESSION['IdProfesor']))
             echo $_SESSION['IdProfesor'];
             unset($_SESSION['IdProfesor']);
-            ?>">  
-                
-                
-                
-                
-<script>
+            ?>">
+                    
 
-//        function info() {
-//            alert('Asegurese de escribir los nombres en mayuscula y pegados ejemplo: JEISSONALEXANDER');
-//        }
-//        function infoa() {
-//            alert('Asegurese de escribir los apellidos en mayuscula y pegados ejemplo:LOPEZLEAL');
-//        }
-//        function correo() {
-//            alert('No deje espacios en este campo puede generar error al completar el registro en el formulario')
-//        }
-        
-</script> 
-
-<br><br>
-
-            <label style="color:white">NOMBRES DEL PROFESOR:</label> <span style=" color:white"> <!--Dame click !! -> --></span> <svg onclick="info()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> 
-            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-            <circle cx="8" cy="4.5" r="1"/>
-            </svg>
-            <input type="text" name="ProNombres" class="form-control"id="" placeholder="NOMBRE" required=""
-            value="<?php
+    <!-- NOMBRE DEL PROFESOR -->    
+<label>NOMBRE DEL PROFESOR</label>
+    <input class="controls" type="text" name="ProNombres" required="" id="ProNombres" placeholder="INGRESE NOMBRE DEL PROFESOR" 
+           value="<?php
             if (isset($actualizarDatosProfesor->ProNombres))
             echo $actualizarDatosProfesor->ProNombres;
             if (isset($erroresValidacion['datosViejos']['ProNombres']))
@@ -94,16 +62,12 @@ if (isset($_SESSION['erroresValidacion'])) {
             echo $_SESSION['ProNombres'];
             unset($_SESSION['ProNombres']);
             ?>"> 
-
-<br><br>
-            <label style="color:white" >APELLIDOS DEL PROFESOR:</label> <span style=" color:white"> <!--Dame click !! -> --> </span> <svg onclick="infoa()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> 
-            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-            <circle cx="8" cy="4.5" r="1"/> 
-            </svg>
-
-            <input type="text" name="ProApellidos" class="form-control" id="" placeholder="APELLIDO" required=""
-            value="<?php
+    
+           
+    <!-- APELLIDOS DEL PROFESOR -->
+<label>APELLIDO DEL PROFESOR</label>    
+    <input class="controls" type="text" required="" name="ProApellidos" id="ProApellidos" placeholder="INGRESE APELLIDO DEL PROFESOR"
+    value="<?php
             if (isset($actualizarDatosProfesor->ProApellidos))
             echo $actualizarDatosProfesor->ProApellidos;
             if (isset($erroresValidacion['datosViejos']['ProApellidos']))
@@ -112,11 +76,12 @@ if (isset($_SESSION['erroresValidacion'])) {
             echo $_SESSION['ProApellidos'];
             unset($_SESSION['ProApellidos']);
             ?>"> 
-<br> 
-<br>
-            <label style="color:white" >CORREO DEL PROFESOR:</label>
-            <input onclick="correo()" type="email" name="ProCorreo" class="form-control" id=""  placeholder="CORREO"  
-            value="<?php
+           
+
+    <!-- CORREO DEL PROFESOR -->
+    <label>CORREO DEL PROFESOR</label>
+    <input class="controls" type="email" required="" name="ProCorreo" id="ProCorreo" placeholder="INGRESE CORREO DEL PROFESOR"
+    value="<?php
             if (isset($actualizarDatosProfesor->ProCorreo))
             echo $actualizarDatosProfesor->ProCorreo;
             if (isset($erroresValidacion['datosViejos']['ProCorreo']))
@@ -124,40 +89,34 @@ if (isset($_SESSION['erroresValidacion'])) {
             if (isset($_SESSION['ProCorreo']))
             echo $_SESSION['ProCorreo'];
             unset($_SESSION['ProCorreo']);
-            ?>"> 
-<br>
-<br>
+            ?>">     
 
-            <label style="color:white">SELECIONE LA MATERIA QUE DICTA EL PROFESOR:</label>    
+    
+<!--SELECT -->
+<label>MATERIA DEL PROFESOR</label>
 
-            <select id="materias_IdMateria" name="materias_IdMateria">  
+        <select id="materias_IdMateria" name="materias_IdMateria" class="controls" >  
             <?php
-                for ($j = 0; $j < $cantMaterias; $j++) {
-            ?>                        
-            <option value = "<?php   echo $registroMateriaProfesores[$j]->IdMateria; ?>" 
-            <?php
- /*PARA REVISAR EN INSERTS */           
-            if (isset($registroMateriaProfesores[$j]->IdMateria) && isset($actualizarDatosProfesor->materias_IdMateria) && ($registroMateriaProfesores[$j]->IdMateria == $actualizarDatosProfesor->materias_IdMateria)) {
-            echo "selected";
-            }
-            ?>                                       
+            for ($j = 0; $j < $cantMaterias; $j++) {
+                ?>                        
+                <option value = "<?php echo $registroMateriaProfesores[$j]->IdMateria; ?>" 
+                <?php
+                /* PARA REVISAR EN INSERTS */
+                if (isset($registroMateriaProfesores[$j]->IdMateria) && isset($actualizarDatosProfesor->materias_IdMateria) && ($registroMateriaProfesores[$j]->IdMateria == $actualizarDatosProfesor->materias_IdMateria)) {
+                    echo "selected";
+                }
+                ?>                                       
 
-            > <?php  echo $registroMateriaProfesores[$j]->IdMateria . " - " . $registroMateriaProfesores[$j]->NomMat; ?>  </option> 
-            <?php
-            }
-            ?>                            
-            </select> 
-            <br>
-            <br>
-            <button type="submit" name="ruta" value="confirmarActualizarProfesor">Actualizar</button>    
-         </form>
-   </div>
-</div>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript --> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+                            > <?php echo $registroMateriaProfesores[$j]->IdMateria . " - " . $registroMateriaProfesores[$j]->NomMat; ?>  </option> 
+                        <?php
+                    }
+                    ?>                             
+        </select> 
+
+    <button type="submit" class="botons" name="ruta" value="confirmarActualizarProfesor">Actualizar</button>
+            
+</form>
+
+
 
 
