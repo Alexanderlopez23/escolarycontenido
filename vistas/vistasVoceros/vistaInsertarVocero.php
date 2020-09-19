@@ -22,7 +22,7 @@ if (isset($_SESSION['erroresValidacion'])) {
 <section class="form-register">
     <h4>REGISTRA UN VOCERO</h4>
 <!-- NUMERO DE DOCUMENTO VOCERO -->
-    <input class="controls" type="number" name="IdVoceros" id="IdVoceros" placeholder="Ingrese Numero Documento"
+<input class="controls" type="number" name="IdVoceros" required="" id="IdVoceros" placeholder="Ingrese Numero Documento"
     value=<?php
                 if (isset($erroresValidacion['datosViejos']['IdVoceros']))
                     echo "\"" . $erroresValidacion['datosViejos']['IdVoceros'] . "\"";
@@ -40,7 +40,7 @@ if (isset($_SESSION['erroresValidacion'])) {
     
     
     <!-- NOMBRE DEL VOCERO -->    
-    <input class="controls" type="text" name="VocNombres" id="VocNombres" placeholder="INGRESE NOMBRE VOCERO" 
+    <input class="controls" type="text" name="VocNombres"required="" id="VocNombres" placeholder="INGRESE NOMBRE VOCERO" 
            value=<?php
            if (isset($erroresValidacion['VocNombres']['VocNombres']))
                 echo "\"" . $erroresValidacion['datosViejos']['VocNombres'] . "\"";
@@ -59,7 +59,7 @@ if (isset($_SESSION['erroresValidacion'])) {
                     </div>       
     
     <!-- APELLIDOS DEL VOCERO -->    
-    <input class="controls" type="text" name="VocApellidos" id="VocApellidos" placeholder="INGRESE APELLIDO DEL VOCERO"
+    <input class="controls" type="text" name="VocApellidos" required="" id="VocApellidos" placeholder="INGRESE APELLIDO DEL VOCERO"
     value=<?php
             if (isset($erroresValidacion['VocApellidos']['VocApellidos']))
                 echo "\"" . $erroresValidacion['datosViejos']['VocApellidos'] . "\"";
@@ -79,7 +79,7 @@ if (isset($_SESSION['erroresValidacion'])) {
               
         
     <!-- CORREO DEL VOCERO -->
-    <input class="controls" type="correo" name="VocCorreo" id="VocCorreo" placeholder="INGRESE CORREO DEL VOCERO"
+    <input class="controls" type="email" required="" name="VocCorreo" id="VocCorreo" placeholder="INGRESE CORREO DEL VOCERO"
     value=<?php
         if (isset($erroresValidacion['VocCorreo']['VocCorreo']))
             echo "\"" . $erroresValidacion['datosViejos']['VocCorreo'] . "\"";

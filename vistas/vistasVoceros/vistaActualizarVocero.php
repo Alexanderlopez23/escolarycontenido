@@ -54,7 +54,7 @@ if (isset($_SESSION['erroresValidacion'])) {
     
     <!-- NOMBRE DEL VOCERO -->    
 <label>NOMBRE DEL VOCERO</label>
-    <input class="controls" type="text" name="VocNombres" id="VocNombres" placeholder="Ingrese su Apellido" 
+    <input class="controls" type="text" name="VocNombres" required="" id="VocNombres" placeholder="INGRESE NOMBRE DEL VOCERO" 
            value="<?php
             if (isset($actualizarDatosVocero->VocNombres))
             echo $actualizarDatosVocero->VocNombres;
@@ -67,7 +67,7 @@ if (isset($_SESSION['erroresValidacion'])) {
     
     <!-- APELLIDOS DEL VOCERO -->
 <label>APELLIDO DEL VOCERO</label>    
-    <input class="controls" type="text" name="VocApellidos" id="VocApellidos" placeholder="INGRESE APELLIDO DEL VOCERO"
+    <input class="controls" type="text" required="" name="VocApellidos" id="VocApellidos" placeholder="INGRESE APELLIDO DEL VOCERO"
     value="<?php
             if (isset($actualizarDatosVocero->VocApellidos))
             echo $actualizarDatosVocero->VocApellidos;
@@ -81,7 +81,7 @@ if (isset($_SESSION['erroresValidacion'])) {
 
     <!-- CORREO DEL VOCERO -->
     <label>CORREO DEL VOCERO</label>
-    <input class="controls" type="correo" name="VocCorreo" id="VocCorreo" placeholder="INGRESE CORREO DEL VOCERO"
+    <input class="controls" type="email" required="" name="VocCorreo" id="VocCorreo" placeholder="INGRESE CORREO DEL VOCERO"
     value="<?php
             if (isset($actualizarDatosVocero->VocCorreo))
             echo $actualizarDatosVocero->VocCorreo;
