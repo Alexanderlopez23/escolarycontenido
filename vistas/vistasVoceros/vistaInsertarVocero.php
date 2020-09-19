@@ -40,7 +40,7 @@ if (isset($_SESSION['erroresValidacion'])) {
     
     
     <!-- NOMBRE DEL VOCERO -->    
-    <input class="controls" type="text" name="VocNombres" id="VocNombres" placeholder="Ingrese su Apellido" 
+    <input class="controls" type="text" name="VocNombres" id="VocNombres" placeholder="INGRESE NOMBRE VOCERO" 
            value=<?php
            if (isset($erroresValidacion['VocNombres']['VocNombres']))
                 echo "\"" . $erroresValidacion['datosViejos']['VocNombres'] . "\"";
@@ -107,5 +107,5 @@ if (isset($_SESSION['erroresValidacion'])) {
 
     </select>
 
-    <input class="botons"  name="ruta" type="submit" value="insertarVocero">
+    <button class="botons"  name="ruta" type="submit" value="insertarVocero">insertar Vocero</button>
 </form>
