@@ -7,13 +7,16 @@ session_start();
 include_once 'controladores/ManejoSesiones/BloqueDeSeguridad.php';
 $seguridad = new BloqueDeSeguridad();
 $seguridad->seguridad("login.php");
-
-if (isset($_SESSION['mensaje'])) {
-    $mensaje = $_SESSION['mensaje'];
-    echo "<script languaje='javascript'>alert('$mensaje')</script>";
-    unset($_SESSION['mensaje']);
+// Mensaje de bienvenida
+if (isset($_SESSION['mensajebienvenido'])) {
+    $mensajebienvenido = $_SESSION['mensajebienvenido'];
+//    echo "<script languaje='javascript'>alert('$mensajebienvenido')</script>";
+    unset($_SESSION['mensajebienvenido']);
 }
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -32,8 +35,29 @@ if (isset($_SESSION['mensaje'])) {
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> 
         <link rel="stylesheet" type="text/css" href="vistas/vistasVoceros/cssvistainsertarvocero/estilo.css">
         <link rel="shortcut icon" href="imagenes/Favicon.ico">     
+        <!-- LIBRERIA SWEET -->
+        <script src="librerias/sweetalert/package/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="librerias/sweetalert/package/dist/sweetalert2.min.css">
+        <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    
     </head>
     <body class="sb-nav-fixed">
+        
+         <!--mensaje bienvenido al usuario  -->     
+         <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php  echo $mensajebienvenido; ?>'
+            })
+        </Script>
+ 
+        
+        
+        
+        
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="Controlador.php?ruta=mostrarinicio">INTRANET EYC</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>

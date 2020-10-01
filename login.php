@@ -1,9 +1,19 @@
 <?php
 session_start();
-if (isset($_SESSION['mensaje'])) {
-    $mensaje = $_SESSION['mensaje'];
-    echo "<script languaje='javascript'>alert('$mensaje')</script>";
-    unset($_SESSION['mensaje']);
+//if (isset($_SESSION['mensaje'])) {
+//    $mensaje = $_SESSION['mensaje'];
+//    echo "<script languaje='javascript'>alert('$mensaje')</script>";
+//    unset($_SESSION['mensaje']);
+//}
+//mensajecrendencialincorrecta
+if (isset($_SESSION['mensajecrendencialincorrecta'])) {
+    $mensajecrendencialincorrecta = $_SESSION['mensajecrendencialincorrecta'];
+    unset($_SESSION['mensajecrendencialincorrecta']);
+}
+   //      mensaje exito en el registro de un usuario para la app // 
+if (isset($_SESSION['mensajeexito'])) {
+    $mensajeexito = $_SESSION['mensajeexito'];
+    unset($_SESSION['mensajeexito']);
 }
 ?>
 
@@ -21,6 +31,28 @@ if (isset($_SESSION['mensaje'])) {
         <link rel="stylesheet" href="css/formularioregistrocss.css">
     </head>
     <body>
+  
+<!--        mensajecrendencialincorrecta  -->    
+         <script languaje="javascript">
+            Swal.fire({
+                icon: 'error',
+                text: '<?php echo $mensajecrendencialincorrecta; ?>',
+            })
+        </Script>
+        
+        
+ <!--        mensaje exito en el registro de un usuario para la app  -->    
+         <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php echo $mensajeexito; ?>',
+            })
+        </Script>       
+        
+        
+        
+        
+        
         <form role="form" method="POST" action="Controlador.php" name="formLogin">
             <section class="form-register">
                 <h4> <center>Iniciar Sesión </center></h4>

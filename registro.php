@@ -1,14 +1,21 @@
 <?php
 session_start();
-if (isset($_SESSION['mensaje'])) {
-    $mensaje = $_SESSION['mensaje'];
-    echo "<script languaje='javascript'>alert('$mensaje')</script>";
-    unset($_SESSION['mensaje']);
-}
+//if (isset($_SESSION['mensaje'])) {
+//    $mensaje = $_SESSION['mensaje'];
+//    echo "<script languaje='javascript'>alert('$mensaje')</script>";
+//    unset($_SESSION['mensaje']);
+//}
 if (isset($_SESSION['erroresValidacion'])) {
     $erroresValidacion = $_SESSION['erroresValidacion'];
     unset($_SESSION['erroresValidacion']);
 }
+
+if (isset($_SESSION['mensajeusuariorepetido'])) {
+    $mensajeusuariorepetido = $_SESSION['mensajeusuariorepetido'];
+//    echo "<script languaje='javascript'>alert('$mensaje')</script>";
+    unset($_SESSION['mensajeusuariorepetido']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,8 +30,26 @@ if (isset($_SESSION['erroresValidacion'])) {
         <!-- Funciones JavaScript propias del sistema -->
         <script type="text/javascript" src="javascript/md5.js"></script> 
         <link rel="shortcut icon" href="imagenes/Favicon.ico">
+        <!--librerias sweet alert -->
+        <script src="librerias/sweetalert/package/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="librerias/sweetalert/package/dist/sweetalert2.min.css">
     </head>
-    <body>
+    <body> 
+          <!--mensaje de exito -->      
+
+        <script languaje="javascript">
+
+
+            Swal.fire({
+                icon: 'warning',
+                text: '<?php echo $mensajeusuariorepetido; ?>',
+            })
+
+
+        </Script>
+        
+        
+        
         <form method="POST" action="Controlador.php" id="formRegistro">
             <section class="form-register">
                 <h4>REGISTRATE</h4>

@@ -45,7 +45,7 @@ class Usuario_sControlador {
                     $asignarRol->insertar(array($resultadoInsercionUsuario_s, 3)); //Se envía el id con que quedó el usuario_s y el id del rol 
 
                     session_start(); //se abre sesión para almacenar en ella el mensaje de inserción                    
-                    $_SESSION['mensaje'] = "Registrado con èxito para ingreso al sistema"; //mensaje de inserción
+                    $_SESSION['mensajeexito'] = "Registrado con èxito para ingreso al sistema"; //mensaje de inserción
                     if ($this->datos['ruta'] == 'gestionDeRegistro') {//si el formulario de la inserción es el de registrarse y fue exitoso se devuelve a login.php
                         header("location:login.php");
                     }
@@ -55,7 +55,7 @@ class Usuario_sControlador {
                     $_SESSION['nombre'] = $this->datos['nombre'];
                     $_SESSION['apellidos'] = $this->datos['apellidos'];
                     $_SESSION['email'] = $this->datos['email'];
-                    $_SESSION['mensaje'] = "El usuario ya existe en el sistema.";
+                    $_SESSION['mensajeusuariorepetido'] = "El usuario ya existe en el sistema.";
                     if ($this->datos['ruta'] == 'gestionDeRegistro') {//si al insertar un usuario en el formulario de registrarse y éste ya existe a registro.php
                         header("location:registro.php");
                     }
@@ -71,7 +71,7 @@ class Usuario_sControlador {
                 if ((0 != $existeUsuario_s['exitoSeleccionId']) && ($existeUsuario_s['registroEncontrado'][0]->usuLogin == $this->datos['email'])) {
 
                     session_start(); //se abre sesión para almacenar en ella el mensaje de inserción
-                    $_SESSION['mensaje'] = "Bienvenido a nuestra Aplicación."; //mensaje de inserción
+                    $_SESSION['mensajebienvenido'] = "Bienvenido a nuestra Aplicación."; //mensaje de inserción
                     $_SESSION['perNombre'] = $existeUsuario_s['registroEncontrado'][0]->perNombre; //mensaje de inserción
                     $_SESSION['perApellido'] = $existeUsuario_s['registroEncontrado'][0]->perApellido; //mensaje de inserción
                     //Consultamos los roles de la persona logueada
@@ -90,7 +90,7 @@ class Usuario_sControlador {
                     header("location:principal.php?contenido=home.php");
                 } else {
                     session_start(); //se abre sesión para almacenar en ella el mensaje de inserción
-                    $_SESSION['mensaje'] = "Credenciales de acceso incorrectas"; //mensaje de inserción
+                    $_SESSION['mensajecrendencialincorrecta'] = "Credenciales de acceso incorrectas, intenta nuevamente"; //mensaje de inserción
                     header("location:login.php");
                 }
                 break;
