@@ -52,7 +52,7 @@ class ProfesoresControlador {
                     $resultadoInsercionProfesor = $insertoProfesor['resultado'];                //Traer el id con que quedó el vocero de lo contrario la excepción o fallo  
 
                     session_start();
-                    $_SESSION['mensaje'] = "Registrado nuevo Profesor con número de documento " . $this->datos['IdProfesor'] . " con éxito.";
+                    $_SESSION['mensajeip'] = "Registrado nuevo Profesor con número de documento " . $this->datos['IdProfesor'] . " con éxito.";
 
                     header("location:Controlador.php?ruta=listarProfesores");
                 } else { // Si existe se retornan los datos y se envía el mensaje correspondiente ****
@@ -63,7 +63,7 @@ class ProfesoresControlador {
                     $_SESSION['ProCorreo'] = $this->datos['ProCorreo'];
                     $_SESSION['materias_IdMateria'] = $this->datos['materias_IdMateria'];
 
-                    $_SESSION['mensaje'] = " El profesor con numero de documento" . $this->datos['IdProfesor'] . " ya existe en el sistema.";
+                    $_SESSION['mensajepr'] = " El profesor con numero de documento" . $this->datos['IdProfesor'] . " ya existe en el sistema.";
 
                     header("location:Controlador.php?ruta=mostrarInsertarProfesores");
                 }
@@ -113,7 +113,7 @@ class ProfesoresControlador {
 //                print_r($this->datos);
 //                echo "</pre>"; exit();
                 session_start();
-                $_SESSION['mensaje'] = "Actualización realizada.";
+                $_SESSION['mensajeactualizar'] = "Actualización realizada.";
                 header("location:Controlador.php?ruta=listarProfesores");
                 break;
 
@@ -127,7 +127,7 @@ class ProfesoresControlador {
                 $gestarProfesores->eliminar(array($this->datos['idAct']));
 
                session_start();
-                $_SESSION['mensaje'] = "El registro ha sido eliminado con exito ";
+                $_SESSION['mensajeeli'] = "El registro ha sido eliminado con exito ";
 
                 header("location:Controlador.php?ruta=listarProfesores");
 

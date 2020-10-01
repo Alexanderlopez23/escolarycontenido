@@ -11,7 +11,7 @@ class ValidadorVoceros {
 //  print_r($datos);
 //  echo "</pre>";
 
-/*****Validar datos ingresados************************ */
+        /*         * ***Validar datos ingresados************************ */
 
         foreach ($datos as $key => $value) {
             $datosViejos[$key] = $value;
@@ -23,15 +23,27 @@ class ValidadorVoceros {
                         $mensajesError['IdVoceros'] = "Dato incorrecto vuelve a intentarlo";
                     }
                     break;  // AQUI SOLO PARA CORREOS:^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$
-                case 'VocCorreo': 
-                    $patronDocumento = "/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/"; 
+                case 'VocNombres':
+                    $patronDocumento = "//";
+                    if (!preg_match($patronDocumento, $value)) {
+                        $mensajesError['VocNombres'] = "Por favor inserte un nombre valido";
+                    }
+                    break;
+                case 'VocApellidos':
+                    $patronDocumento = "//";
+                    if (!preg_match($patronDocumento, $value)) {
+                        $mensajesError['VocApellidos'] = "Por favor inserte un apellido valido";
+                    }
+                    break;
+                case 'VocCorreo':
+                    $patronDocumento = "/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/";
                     if (!preg_match($patronDocumento, $value)) {
                         $mensajesError['VocCorreo'] = "Por favor inserte un correo valido";
                     }
-                    break;         
+                    break;
             }
-        }        
-        /*********************************************************************** */
+        }
+        /*         * ********************************************************************* */
         //ESTO SE HACE PARA EN CASO QUE LA LOGICA DE ARRIBA NO SE CUMPLA// 
         if (!is_null($mensajesError)) {
             return array('datosViejos' => $datosViejos, 'mensajesError' => $mensajesError, 'marcaCampo' => $marcaCampo);

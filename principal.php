@@ -7,7 +7,64 @@ session_start();
 include_once 'controladores/ManejoSesiones/BloqueDeSeguridad.php';
 $seguridad = new BloqueDeSeguridad();
 $seguridad->seguridad("login.php");
-// Mensaje de bienvenida
+//mensajes obtenidos del crud:
+if (isset($_SESSION['mensaje'])) {
+    $mensaje = $_SESSION['mensaje'];
+    echo "<script languaje='javascript'>alert('$mensaje')</script>";
+    unset($_SESSION['mensaje']);
+}
+
+//Mensaje nuevo vocero insertado
+if (isset($_SESSION['mensajenvi'])) {
+    $mensajenvi = $_SESSION['mensajenvi'];
+    unset($_SESSION['mensajenvi']);
+}
+//Mensaje  vocero repetido
+if (isset($_SESSION['mensajenvr'])) {
+    $mensajenvr = $_SESSION['mensajenvr'];
+    unset($_SESSION['mensajenvr']);
+}
+
+//mensajecontactoinsertado
+if (isset($_SESSION['mensajeci'])) {
+    $mensajeci = $_SESSION['mensajeci'];
+    unset($_SESSION['mensajeci']);
+}
+
+//Mensaje  contacto repetido
+if (isset($_SESSION['mensajecr'])) {
+    $mensajecr = $_SESSION['mensajecr'];
+    unset($_SESSION['mensajecr']);
+}
+
+// mensaje profesor insertado 
+if (isset($_SESSION['mensajeip'])) {
+    $mensajeip = $_SESSION['mensajeip'];
+    unset($_SESSION['mensajeip']);
+}
+
+// mensaje profesor repetido
+if (isset($_SESSION['mensajepr'])) {
+    $mensajepr = $_SESSION['mensajepr'];
+    unset($_SESSION['mensajepr']);
+}
+
+
+
+//mensaje actualizacion realizada
+if (isset($_SESSION['mensajeactualizar'])) {
+    $mensajeactualizar = $_SESSION['mensajeactualizar'];
+    unset($_SESSION['mensajeactualizar']);
+}
+
+//mensajeeli registro eliminado
+if (isset($_SESSION['mensajeeli'])) {
+    $mensajeeli = $_SESSION['mensajeeli'];
+//    echo "<script languaje='javascript'>alert('$mensajebienvenido')</script>";
+    unset($_SESSION['mensajeeli']);
+}
+
+// Mensaje de bienvenida al usuario
 if (isset($_SESSION['mensajebienvenido'])) {
     $mensajebienvenido = $_SESSION['mensajebienvenido'];
 //    echo "<script languaje='javascript'>alert('$mensajebienvenido')</script>";
@@ -42,22 +99,89 @@ if (isset($_SESSION['mensajebienvenido'])) {
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    
+
     </head>
     <body class="sb-nav-fixed">
-        
-         <!--mensaje bienvenido al usuario  -->     
-         <script languaje="javascript">
+
+        <!--mensaje bienvenido al usuario  -->     
+        <script languaje="javascript">
             Swal.fire({
                 icon: 'success',
-                text: '<?php  echo $mensajebienvenido; ?>'
+                text: '<?php echo $mensajebienvenido; ?>'
             })
         </Script>
- 
+
+        <!-- mensaje nuevo vocero insertado -->
+
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php echo $mensajenvi; ?>'
+            })
+        </Script>
+        <!-- mensaje vocero repetido -->
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'warning',
+                text: '<?php echo $mensajenvr; ?>'
+            })
+        </Script>
+        <!-- mensaje actualizacion realizada -->
+
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php echo $mensajeactualizar; ?>'
+            })
+        </Script>
+        <!--mensajeeli registro eliminado -->
+        <script languaje="javascript">
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                text: '<?php echo $mensajeeli; ?>',
+                showConfirmButton: false,
+                timer: 4000
+            })
+
+        </Script> 
         
+                <!-- mensaje nuevo contacto insertado -->
+
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php echo $mensajeci; ?>'
+            })
+        </Script>
+
+                <!-- mensaje contacto repetido -->
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'warning',
+                text: '<?php echo $mensajecr; ?>'
+            })
+        </Script>
+         <!-- mensaje nuevo profesor insertado -->
+
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'success',
+                text: '<?php echo $mensajeip; ?>'
+            })
+        </Script>
+
+        <!-- mensaje profesor repetido -->
+        <script languaje="javascript">
+            Swal.fire({
+                icon: 'warning',
+                text: '<?php echo $mensajepr; ?>'
+            })
+        </Script>
         
-        
-        
+
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="Controlador.php?ruta=mostrarinicio">INTRANET EYC</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -135,10 +259,10 @@ if (isset($_SESSION['mensajebienvenido'])) {
                     <!-- ESTO SERA PARA EL INVITADO -->
 
                     <?php if (in_array(3, $_SESSION['rolesEnSesion']) || in_array(3, $_SESSION['rolesEnSesion'])) { ?>
-                    <div style="background-color:white; color:black">
-                        <h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USUARIO INVITADO </h6>
-                    </div>
-                     
+                        <div style="background-color:white; color:black">
+                            <h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USUARIO INVITADO </h6>
+                        </div>
+
                     <?php } ?>
 
 <!--                    <script>
@@ -192,11 +316,43 @@ if (isset($_SESSION['mensajebienvenido'])) {
             <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
             <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
             <script src="startbootstrap-sb-admin-gh-pages/assets/demo/datatables-demo.js"></script>
-            <script type="text/javascript">
-                        $(document).ready(function () {
-                            $('#example').DataTable();
-                        }
-                        );
-            </script>  
+           <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $('#example').DataTable({
+                                        pageLength: 5,
+                                        lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]],
+                                        "language": idioma_espanol
+                                    });
+                                });
+
+                                var idioma_espanol = {
+                                    "sProcessing": "Procesando...",
+                                    "sLengthMenu": "Mostrar _MENU_ registros",
+                                    "sZeroRecords": "No se encontraron resultados",
+                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                    "sInfoPostFix": "",
+                                    "sSearch": "Buscar:",
+                                    "sUrl": "",
+                                    "sInfoThousands": ",",
+                                    "sLoadingRecords": "Cargando...",
+                                    "oPaginate": {
+                                        "sFirst": "Primero",
+                                        "sLast": "Último",
+                                        "sNext": "Siguiente",
+                                        "sPrevious": "Anterior"
+                                    },
+                                    "oAria": {
+                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                    },
+                                    "buttons": {
+                                        "copy": "Copiar",
+                                        "colvis": "Visibilidad"
+                                    }
+                                }
+            </script>      
     </body>
 </html>

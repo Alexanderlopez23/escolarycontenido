@@ -50,7 +50,7 @@ class VocerosControlador {
                     $resultadoInsercionVocero = $insertoVocero['resultado'];                //Traer el id con que quedó el vocero de lo contrario la excepción o fallo  
 
                     session_start();
-                    $_SESSION['mensaje'] = "Registrado nuevo vocero con numero de documento " . $this->datos['IdVoceros'] . " con éxito.";
+                    $_SESSION['mensajenvi'] = "Registrado nuevo vocero con numero de documento " . $this->datos['IdVoceros'] . " con éxito.";
 
                     header("location:Controlador.php?ruta=listarVoceros");
                 } else {// Si existe se retornan los datos y se envía el mensaje correspondiente ****
@@ -61,7 +61,7 @@ class VocerosControlador {
                     $_SESSION['VocCorreo'] = $this->datos['VocCorreo'];
                     $_SESSION['curso_IdCurso'] = $this->datos['curso_IdCurso'];
 
-                    $_SESSION['mensaje'] = " El código " . $this->datos['IdVoceros'] . " ya existe en el sistema.";
+                    $_SESSION['mensajenvr'] = " El vocero con numero de documento " . $this->datos['IdVoceros'] . " ya existe en el sistema, vuelve a intentarlo nuevamente";
 
                     header("location:Controlador.php?ruta=mostrarInsertarVoceros");
                 }
@@ -108,7 +108,7 @@ class VocerosControlador {
                 $actualizarVocero = $gestarVoceros->actualizar(array($this->datos)); //Se envía datos del libro para actualizar.                
 //
                 session_start();
-                $_SESSION['mensaje'] = "Actualización realizada.";
+                $_SESSION['mensajeactualizar'] = "Actualización realizada.";
                 header("location:Controlador.php?ruta=listarVoceros");
                 break;
 
@@ -122,7 +122,7 @@ class VocerosControlador {
                 $gestarVoceros->eliminar(array($this->datos['idAct']));
 
                 session_start();
-                $_SESSION['mensaje'] = "El registro ha sido eliminado con exito ";
+                $_SESSION['mensajeeli'] = "El registro ha sido eliminado con exito ";
 
                 header("location:Controlador.php?ruta=listarVoceros");
 
