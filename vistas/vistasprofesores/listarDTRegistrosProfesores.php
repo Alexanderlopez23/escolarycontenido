@@ -43,7 +43,7 @@ if (isset($_SESSION['listaDeProfesores'])) {
                 <!--<td>d>-->  
                 <td><?php  echo $listaDeProfesores[$i]->NomMat;  ?></td>  
                 <td><a href="Controlador.php?ruta=actualizarProfesor&idAct=<?php  echo $listaDeProfesores[$i]->IdProfesor;  ?>">Actualizar</a></td>  
-                <td><a href="Controlador.php?ruta=eliminarProfesor&idAct=<?php  echo $listaDeProfesores[$i]->IdProfesor;  ?>"  onclick="return confirm('Está seguro de eliminar el registro del contacto con número de documento <?php  echo $listaDeProfesores[$i]->IdProfesor;  ?> ?')">Eliminar</a></td>  
+                <td><a href="Controlador.php?ruta=eliminarProfesor&idAct=<?php  echo $listaDeProfesores[$i]->IdProfesor;  ?>"  onclick="return confirm('Está seguro de eliminar el registro del profesor con número de documento <?php  echo $listaDeProfesores[$i]->IdProfesor;  ?> ?')">Eliminar</a></td>  
             </tr>   
             <?php
             $i++;
