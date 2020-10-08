@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="WB DataDic" />
     <meta name="description" content="mibaseinforma Data Dictionary." />
-    <title> DICCIONARIO mibaseinforma </title>
+    <title> DICCIONARIO DE DATOS mibaseinforma </title>
     <style type="text/css">
     table{
         width: 100%;
@@ -52,15 +52,15 @@
 </head>
 <body>
 <div id="title-sect">
-<h1>mibaseinforma<br> Data Dictionay</h1>
+<h1>mibaseinforma<br> DICCIONARIO DE DATOS</h1>
 <p>
-<em>2020-10-07</em>
+<em>BASE DE DATOS</em>
 </p>
 <p class="proj-desc">
 <em></em>
 </p>
 </div>
-<h2>Alphabetic Index</h2>
+<h2>TABLAS</h2>
 <ul>
 <li><a href='#Jornada'>Jornada</a></li>
 <li><a href='#contactos'>contactos</a></li>
@@ -75,11 +75,11 @@
 <li><a href='#voceros'>voceros</a></li>
 </ul>
 <table id='Jornada'>
-<caption>Jornada</caption>
+<caption>Jornada (Tabla para jornada)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -88,11 +88,11 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdJornada</td>
-    <td>INT</td>
+    <td>INT(3)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -117,11 +117,11 @@
     <td>Nombre de la jornada</td>
 </tr>
 <table id='contactos'>
-<caption>contactos</caption>
+<caption>contactos(Tabla para contactos)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -130,7 +130,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdContacto</td>
@@ -169,7 +169,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Este campo es para guardar los apellidos del contacto \n</td>
+    <td>Este campo es para guardar los apellidos del contacto </td>
 </tr>
 <tr>
     <td>ConCorreo</td>
@@ -195,7 +195,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>1</td>
-    <td></td>
+    <td>Este campo es para el estado del registro 1 o 0</td>
 </tr>
 <tr>
     <td>Ususesion</td>
@@ -208,7 +208,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td></td>
+    <td>NULL</td>
 </tr>
 <tr>
     <td>Created</td>
@@ -221,7 +221,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>CURRENT_TIMESTAMP()</td>
-    <td></td>
+    <td>Campo para ver cuando se creo el registro</td>
 </tr>
 <tr>
     <td>Update</td>
@@ -234,7 +234,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()</td>
-    <td></td>
+    <td>Campo para ver cuando se actualizo el registro</td>
 </tr>
 <tr>
     <td>rolcontacto_Idrolcontacto</td>
@@ -247,14 +247,14 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td></td>
+    <td>Llave Foranea con rol contacto</td>
 </tr>
 <table id='curso'>
-<caption>curso</caption>
+<caption>curso (Tabla para curso)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -263,7 +263,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdCurso</td>
@@ -288,7 +288,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td>''</td>
+    <td></td>
     <td>Este campo guardara los cursos que puede tener un vocero ejemplo: 801</td>
 </tr>
 <tr>
@@ -302,7 +302,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>1</td>
-    <td></td>
+    <td>Este campo es para el estado del registro 1 o 0</td>
 </tr>
 <tr>
     <td>Ususesion</td>
@@ -315,7 +315,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td></td>
+    <td>NULL</td>
 </tr>
 <tr>
     <td>Created</td>
@@ -328,7 +328,7 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>CURRENT_TIMESTAMP()</td>
-    <td></td>
+    <td>Campo para ver cuando se creo el registro</td>
 </tr>
 <tr>
     <td>Update</td>
@@ -341,14 +341,14 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()</td>
-    <td></td>
+    <td>Campo para ver cuando se actualizo el registro</td>
 </tr>
 <table id='materias'>
-<caption>materias</caption>
+<caption>materias(Tabla para materias)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -357,7 +357,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdMateria</td>
@@ -438,11 +438,10 @@
     <td></td>
 </tr>
 <table id='persona'>
-<caption>persona</caption>
-<tr><td colspan='11'>Esta tabla nos muestra los datos de la persona </td></tr>
+<caption>persona (Tabla para persona) </caption>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -451,7 +450,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>perId</td>
@@ -571,11 +570,11 @@
     <td></td>
 </tr>
 <table id='profesores'>
-<caption>profesores</caption>
+<caption>profesores (Tabla para profesores)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -584,7 +583,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdProfesor</td>
@@ -704,11 +703,11 @@
     <td></td>
 </tr>
 <table id='rol'>
-<caption>rol</caption>
+<caption>rol(Tabla para rol)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -717,7 +716,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>rolId</td>
@@ -811,11 +810,11 @@
     <td></td>
 </tr>
 <table id='rolcontacto'>
-<caption>rolcontacto</caption>
+<caption>rolcontacto (Tabla para rolcontacto)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -824,7 +823,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>Idrolcontacto</td>
@@ -905,11 +904,11 @@
     <td></td>
 </tr>
 <table id='usuario_s'>
-<caption>usuario_s</caption>
+<caption>usuario_s(Tabla para usuario_s)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -918,7 +917,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>usuId</td>
@@ -1025,11 +1024,11 @@
     <td></td>
 </tr>
 <table id='usuario_s_roles'>
-<caption>usuario_s_roles</caption>
+<caption>usuario_s_roles (Tabla para usuario_s_roles) </caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -1038,7 +1037,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>id_usuario_s</td>
@@ -1145,11 +1144,11 @@
     <td></td>
 </tr>
 <table id='voceros'>
-<caption>voceros</caption>
+<caption>voceros(Tabla para voceros)</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
-    <th>Column name</th>
-    <th>DataType</th>
+    <th>NOMBRE DE LA COLUMNA</th>
+    <th>TIPO DE DATO</th>
     <th><abbr title='Primary Key'>PK</abbr></th>
     <th><abbr title='Not Null'>NN</abbr></th>
     <th><abbr title='Unique'>UQ</abbr></th>
@@ -1158,7 +1157,7 @@
     <th><abbr title='Zero Fill'>ZF</abbr></th>
     <th><abbr title='Auto Increment'>AI</abbr></th>
     <th>Default</th>
-    <th>Comment</th>
+    <th>Comentario</th>
 </tr>
 <tr>
     <td>IdVoceros</td>
