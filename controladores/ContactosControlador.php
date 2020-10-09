@@ -70,7 +70,7 @@ class ContactosControlador {
             case 'listarContactos': // listar
 
                 $gestarContactos = new contactoDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
-                $registroContactos = $gestarContactos->seleccionarTodos();
+                $registroContactos = $gestarContactos->seleccionarTodosEuno();
 //
 //                echo "<pre>";
 //                print_r($registroContactos);
@@ -122,7 +122,7 @@ class ContactosControlador {
 //                echo"</pre>";
 //                exit();
                 $gestarContactos = new contactoDAO(SERVIDOR, BASE, USUARIO_BD, CONTRASENIA_BD);
-                $gestarContactos->eliminar(array($this->datos['idAct']));
+                $gestarContactos->eliminarLogico(array($this->datos['idAct']));
 //
                 session_start();
                 $_SESSION['mensajeeli'] = "El registro ha sido eliminado con exito ";

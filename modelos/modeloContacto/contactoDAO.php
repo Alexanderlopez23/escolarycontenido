@@ -192,5 +192,31 @@ class contactoDAO extends ConBdMySql {
             return ['exitoSeleccionId' => FALSE, 'registroEncontrado' => $registroEncontrado];
         }
     }
+// Este metodo es para seleccionar los registros que tienen estado uno, 
+// ademas este metodo se llama en el controlador con el punto de solo traer los 
+// registros de estado uno se usa para un 
+// eliminado logico tener en cuenta el where donde se ubica.  
+    
+        public function seleccionarTodosEuno() {
 
+        $planConsulta = "SELECT c.IdContacto,c.ConNombres,c.ConApellidos,c.ConCorreo,r.Idrolcontacto,r.Nomrol";
+        $planConsulta .= " FROM contacto c";
+        $planConsulta .= " JOIN  rolcontacto r ON c.rolcontacto_Idrolcontacto=r.Idrolcontacto ";
+        $planConsulta .= " WHERE c.Estado = 1 ";
+        $planConsulta .= " ORDER BY c.IdContacto ASC ";
+
+        $registrosContactos = $this->conexion->prepare($planConsulta);
+        $registrosContactos->execute(); //Ejecución de la consulta 
+
+        $listadoRegistrosContacto = array();
+
+        while ($registro = $registrosContactos->fetch(PDO::FETCH_OBJ)) {
+            $listadoRegistrosContacto[] = $registro;
+        }
+
+        $this->cierreBd();
+
+        return $listadoRegistrosContacto;
+    }
+       
 }
