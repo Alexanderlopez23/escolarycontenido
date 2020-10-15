@@ -15,17 +15,17 @@ if (isset($_SESSION['listaDeContactos'])) {
 <table id="example" class="table-responsive table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
-            <th bgcolor="#1f53c5"> <span style="color:white">DOCUMENTO</span></th> 
-            <th bgcolor="#1f53c5"> <span style="color:white">NOMBRES </span></th> 
-            <th bgcolor="#1f53c5"><span style="color:white">APELLIDOS</span> </th> 
-            <th bgcolor="#1f53c5"><span style="color:white">CORREO</span> </th> 
+            <th bgcolor="#24303c"> <span style="color:white">DOCUMENTO</span></th> 
+            <th bgcolor="#24303c"> <span style="color:white">NOMBRES </span></th> 
+            <th bgcolor="#24303c"><span style="color:white">APELLIDOS</span> </th> 
+            <th bgcolor="#24303c"><span style="color:white">CORREO</span> </th> 
             <!--<th>Estado</th>--> 
-            <th bgcolor="#1f53c5"><span style="color:white">ROL</span> </th> 
-            <th bgcolor="#1f53c5"><span style="color:white">ACTUALIZAR</span> <svg style="color:white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <th bgcolor="#24303c"><span style="color:white">ROL</span> </th> 
+            <th bgcolor="#24303c"><span style="color:white">ACTUALIZAR</span> <svg style="color:white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                 </svg></th> 
-            <th bgcolor="#1f53c5"><span style="color:white"> Eliminar </span>  <svg style="color:white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-backspace-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <th bgcolor="#24303c"><span style="color:white"> Eliminar </span>  <svg style="color:white" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-backspace-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
                 </svg></th> 
         </tr>
@@ -42,8 +42,8 @@ if (isset($_SESSION['listaDeContactos'])) {
                 <td><?php echo $listaDeContactos[$i]->ConCorreo; ?></td>  
                 <!--<td>d>-->  
                 <td><?php echo $listaDeContactos[$i]->Nomrol; ?></td>  
-                <td><a href="Controlador.php?ruta=actualizarContacto&idAct=<?php echo $listaDeContactos[$i]->IdContacto; ?>">Actualizar</a></td>  
-                <td><a href="Controlador.php?ruta=eliminarContacto&idAct=<?php echo $listaDeContactos[$i]->IdContacto; ?>"  onclick="return confirm('Está seguro de eliminar el registro del contacto con número de documento <?php echo $listaDeContactos[$i]->IdContacto; ?> ?')">Eliminar</a></td>  
+                <td><a class="btn btn-success" href="Controlador.php?ruta=actualizarContacto&idAct=<?php echo $listaDeContactos[$i]->IdContacto; ?>">Actualizar</a></td>  
+                <td><a class="btn btn-danger" href="Controlador.php?ruta=eliminarContacto&idAct=<?php echo $listaDeContactos[$i]->IdContacto; ?>"  onclick="return confirm('Está seguro de eliminar el registro del contacto con número de documento <?php echo $listaDeContactos[$i]->IdContacto; ?> ?')">Eliminar</a></td>  
             </tr>   
             <?php
             $i++;

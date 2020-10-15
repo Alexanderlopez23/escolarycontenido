@@ -23,8 +23,9 @@
             <p class="mb-0">
                Si usted necesita funciones que aun no tiene puede contactar al
                desarrollador. por los siguientes medios:<br>
-               <a href="tel:+573144352302">Llamar al Teléfono</a> <br>
-               <a href="mailto:jalopez9722@misena.edu.co">Redatactar un correo</a>
+               <a class="btn btn-info" href="tel:+573144352302">Llamar al Teléfono</a> <br>
+               <br>
+               <a class="btn btn-info" href="mailto:jalopez9722@misena.edu.co">Redatactar un correo</a>
             </p>
         </div>
     </div>

@@ -217,11 +217,11 @@ if (isset($_SESSION['mensajebienvenido'])) {
                             <?php if (in_array(1, $_SESSION['rolesEnSesion']) || in_array(4, $_SESSION['rolesEnSesion'])) { ?>    
                                 <a class="nav-link" href="Controlador.php?ruta=mostrarInsertarVoceros">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black ">INGRESAR VOCEROS </div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black ">INGRESAR VOCEROS </div>
                                 </a>
                                 <a class="nav-link" href="Controlador.php?ruta=listarVoceros&pag=0">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black ">REGISTROS VOCEROS</div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black ">REGISTROS VOCEROS</div>
                                 </a>
                                 <br>
                                 <br>
@@ -231,12 +231,12 @@ if (isset($_SESSION['mensajebienvenido'])) {
 
                                 <a class="nav-link" href="Controlador.php?ruta=mostrarInsertarContactos">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black ">INGRESAR CONTACTOS </div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black ">INGRESAR CONTACTOS </div>
                                 </a>
 
                                 <a class="nav-link" href="Controlador.php?ruta=listarContactos&pag=0">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black "> REGISTROS CONTACTOS </div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black "> REGISTROS CONTACTOS </div>
                                 </a>
                                 <br>
                                 <br>
@@ -245,11 +245,11 @@ if (isset($_SESSION['mensajebienvenido'])) {
                             <?php if (in_array(2, $_SESSION['rolesEnSesion']) || in_array(4, $_SESSION['rolesEnSesion'])) { ?>
                                 <a class="nav-link" href="Controlador.php?ruta=mostrarInsertarProfesores">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black ">INGRESAR PROFESORES </div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black ">INGRESAR PROFESORES </div>
                                 </a>
                                 <a class="nav-link" href="Controlador.php?ruta=listarProfesores&pag=0">
                                     <div class="sb-nav-link-icon"><i class=""></i></div>
-                                    <div style="background-color:whitesmoke; color:black "> REGISTROS PROFESORES </div>
+                                    <div class="btn btn-success" style="background-color:whitesmoke; color:black "> REGISTROS PROFESORES </div>
                                 </a>
                             <?php } ?>
                         </div>
